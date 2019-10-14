@@ -1,0 +1,29 @@
+{
+    "name": "xw/weather",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "weidada",
+            "email": "15724747247@163.com"
+        }
+    ],
+   "autoload": {
+        "psr-4": {
+            "Xw\\Weather\\": "./src"
+        }
+    },
+   "require": {
+     "guzzlehttp/guzzle": "^6.3"
+   },
+   "require-dev": {
+      "phpunit/phpunit": "^7.5",
+      "mockery/mockery": "^1.2"
+    },
+   "extra": {
+    "laravel": {
+      "providers": [
+        "Xw\\Weather\\ServiceProvider"
+      ]
+    }
+   }
+}
