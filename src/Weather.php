@@ -47,10 +47,15 @@ class Weather
      * @param string $format
      * @return mixed|string
      */
-    public function weather($city, string $type = 'base', string $format = 'json')
+    public function weather($city, string $type = 'live', string $format = 'json')
     {
-        if (!\in_array(\strtolower($type), ['base', 'all'])) {
-            throw new ParamException("Invalid type value(base/all):" . $type);
+        $types = [
+            'live' => 'base',
+            'forecast' => 'all'
+        ];
+
+        if (!\array_key_exists(\strtolower($type), $types)) {
+            throw new ParamException("Invalid type value(live/forecast):" . $type);
         }
 
         if (!\in_array(\strtolower($format), ['json','xml'])) {
@@ -74,6 +79,25 @@ class Weather
             throw new HttpException($e->getMessage(), $e->getCode(), $e);
         }
     }
-}
 
+    /**
+     * @param $city
+     * @param string $format
+     * @return mixed
+     */
+    public function getLiveWeather($city, $format = 'json')
+    {
+        return $this->weather($city, 'base', $format);
+    }
+
+    /**
+     * @param $city
+     * @param string $format
+     * @return mixed
+     */
+    public function getForecastsWeather($city, $format = 'json')
+    {
+        return $this->weather($city, 'all', $format);
+    }
+}
  ?>
