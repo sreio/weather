@@ -47,7 +47,7 @@ class Weather
      * @param string $format
      * @return mixed|string
      */
-    public function weather($city, $type = 'live', $format = 'json')
+    public function weather($city, string $type = 'live', string $format = 'json')
     {
         $types = [
             'live' => 'base',
