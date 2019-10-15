@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4140e578-1da8-428f-a219-7752ee93479e" name="默认" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Weather.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Weather.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/WeatherTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/WeatherTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -100,7 +96,7 @@
       <option name="presentableId" value="Default" />
       <updated>1571040782246</updated>
       <workItem from="1571040787796" duration="6067000" />
-      <workItem from="1571103628587" duration="1867000" />
+      <workItem from="1571103628587" duration="2131000" />
     </task>
     <servers />
   </component>
