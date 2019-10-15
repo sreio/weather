@@ -9,6 +9,7 @@
 
 ```sh
 $ composer require xw/weather -vvv
+$ php artisan vendor:publish #发布配置
 ```
 
 ## 配置
