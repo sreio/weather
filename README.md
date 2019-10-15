@@ -175,15 +175,13 @@ array | string   getForecastsWeather(string $city, string $format = 'json')
 
 ### 在 Laravel 中使用
 
-在 Laravel 中使用也是同样的安装方式，配置写在 `config/services.php` 中：
+在 Laravel 中使用也是同样的安装方式，配置写在 `config/weather.php` 中：
 
 ```php
     .
     .
     .
-     'weather' => [
-        'key' => env('WEATHER_API_KEY'),
-    ],
+     'weather_key' => env('WEATHER_API_KEY', '')
 ```
 
 然后在 `.env` 中配置 `WEATHER_API_KEY` ：
