@@ -8,8 +8,8 @@
 ## 安装
 
 ```sh
-$ composer require xw/weather -vvv
-$ php artisan vendor:publish #发布配置
+$ composer require xw/weather
+$ php artisan vendor:publish --provider="Xw\Weather\ServiceProvider" #发布配置
 ```
 
 ## 配置
@@ -178,9 +178,6 @@ array | string   getForecastsWeather(string $city, string $format = 'json')
 在 Laravel 中使用也是同样的安装方式，配置写在 `config/weather.php` 中：
 
 ```php
-    .
-    .
-    .
      'weather_key' => env('WEATHER_API_KEY', '')
 ```
 
@@ -195,37 +192,25 @@ WEATHER_API_KEY=xxxxxxxxxxxxxxxxxxxxx
 #### 方法参数注入
 
 ```php
-    .
-    .
-    .
     public function edit(Weather $weather) 
     {
         $response = $weather->getLiveWeather('深圳');
     }
-    .
-    .
-    .
 ```
 
 #### 服务名访问
 
 ```php
-    .
-    .
-    .
     public function edit() 
     {
         $response = app('weather')->getLiveWeather('深圳');
     }
-    .
-    .
-    .
 
 ```
 
 ## 参考
 
-- [高德天气查询接口](https://lbs.amap.com/api/webservice/guide/api/weatherinfo/#weatherinfo)
+- [高德天气查询接口文档](https://lbs.amap.com/api/webservice/guide/api/weatherinfo/#weatherinfo)
 
 ## License
 
