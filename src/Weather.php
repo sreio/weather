@@ -87,7 +87,7 @@ class Weather
      */
     public function getLiveWeather($city, $format = 'json')
     {
-        return $this->weather($city, 'base', $format);
+        return $this->weather($city, 'live', $format);
     }
 
     /**
@@ -97,7 +97,7 @@ class Weather
      */
     public function getForecastsWeather($city, $format = 'json')
     {
-        return $this->weather($city, 'all', $format);
+        return $this->weather($city, 'forecast', $format);
     }
 }
  ?>
