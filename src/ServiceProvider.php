@@ -5,13 +5,6 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
 {
     protected $defer = true;
 
-    public function boot()
-    {
-        $this->publishes([
-            __DIR__ . '/Config/weather.php' => config_path('weather.php')
-        ]);
-    }
-
     public function register()
     {
         $this->app->singleton(Weather::class, function(){
@@ -19,6 +12,13 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
         });
 
         $this->app->alias(Weather::class, 'weather');
+    }
+
+    public function boot()
+    {
+        $this->publishes([
+            __DIR__ . '/Config/weather.php' => config_path('weather.php')
+        ]);
     }
 
     public function provides()

@@ -66,7 +66,7 @@ class Weather
             'key' => $this->key,
             'city' => $city,
             'output' => \strtolower($format),
-            'extensions' => \strtolower($type)
+            'extensions' => \strtolower($types[$type])
         ]);
 
         try{

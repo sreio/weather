@@ -22,7 +22,7 @@ class WeatherTest extends TestCase
                 'key' => 'mock-key',
                 'city' => '深圳',
                 'output' => 'json',
-                'extensions' => 'live',
+                'extensions' => 'base',
             ],
         ])->andReturn($response);
 
@@ -38,7 +38,7 @@ class WeatherTest extends TestCase
             'query' => [
                 'key' => 'mock-key',
                 'city' => '深圳',
-                'extensions' => 'forecast',
+                'extensions' => 'all',
                 'output' => 'xml',
             ],
         ])->andReturn($response);
@@ -126,7 +126,7 @@ class WeatherTest extends TestCase
     {
         // 将 getWeather 接口模拟为返回固定内容，以测试参数传递是否正确
         $w = \Mockery::mock(Weather::class, ['mock-key'])->makePartial();
-        $w->expects()->weather('深圳', 'base', 'json')->andReturn(['success' => true]);
+        $w->expects()->weather('深圳', 'live', 'json')->andReturn(['success' => true]);
 
         // 断言正确传参并返回
         $this->assertSame(['success' => true], $w->getLiveWeather('深圳'));
@@ -136,7 +136,7 @@ class WeatherTest extends TestCase
     {
         // 将 getWeather 接口模拟为返回固定内容，以测试参数传递是否正确
         $w = \Mockery::mock(Weather::class, ['mock-key'])->makePartial();
-        $w->expects()->weather('深圳', 'all', 'json')->andReturn(['success' => true]);
+        $w->expects()->weather('深圳', 'forecast', 'json')->andReturn(['success' => true]);
 
         // 断言正确传参并返回
         $this->assertSame(['success' => true], $w->getForecastsWeather('深圳'));
